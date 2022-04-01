@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  display: grid;
+  margin: auto;
+  width: auto;
+  height: auto;
+  grid-template-columns: repeat(4, 80px);
+  grid-template-rows: minmax(120px, auto) repeat(5, 80px);
+  background: rgba(0, 0, 0, 0.999);
+  gap: 4px;
+  padding: 10px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.477);
+}
+.container button {
+  cursor: pointer;
+  font-size: 2em;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+}
+.saida {
+  grid-column: 1/-1;
+  background-color: rgba(51, 50, 50, 0.079);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+  padding: 10px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.saida .anterior {
+  font-size: 2em;
+  color: rgb(144, 143, 143);
+  padding: 10px;
+}
+.saida .atual {
+  font-size: 2.5em;
+  color: white;
+}
+.igual, .operador {
+  background-color: #fe9603;
+  color: white;
+}
+.operador:hover {
+  background-color: #e58704;
+}
+.operador:active {
+  transform: scale(0.9);
+}
+
+.numero {
+  background-color: #333333;
+  color: white;
+}
+.numero:hover {
+  background-color: #242424;
+}
+.numero:active {
+  background-color: #333333;
+  transform: scale(0.9);
+}
+.span-duas {
+  grid-column: span 2;
+  background-color: #a7a7a7;
+}
+.span-duas:hover {
+  background-color: #7e7e7e;
+}
+.span-duas:active {
+  transform: scale(0.9);
+}
