@@ -15,6 +15,7 @@ class Calculador {
   clear() {
     this.atual = "";
     this.anterior = "";
+    this.operador = undefined;
   }
   updateTela() {
     this.opercaoAnterior.innerText = this.anterior;
@@ -24,17 +25,21 @@ class Calculador {
     this.atual = "";
   }
   adicionarNumero(numero) {
-    if (this.atual.includes(".",) && numero == ".") return;
-    console.log(this.anterior)
+    if (this.atual.includes(".") && numero == ".") return;
+    console.log(this.anterior);
     this.atual += numero;
   }
   guardar() {
     this.anterior += this.atual;
     this.atual = "";
-    //if(){
-
-    //}
   }
+  escolherOperador(operador) {
+    if(this.anterior.includes(operador)) return;
+    this.operador = operador;
+    this.anterior += this.operador;
+    this.atual = "";
+  }
+
   calcular() {
     let resultado = this.anterior;
     resultado += this.atual;
@@ -56,8 +61,8 @@ for (const numero of btnNumero) {
 }
 for (const operador of btnoperador) {
   operador.addEventListener("click", () => {
-    calculador.adicionarNumero(operador.innerText);
     calculador.guardar();
+    calculador.escolherOperador(operador.innerText);
     calculador.updateTela();
   });
 }
